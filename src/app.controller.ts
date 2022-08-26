@@ -11,7 +11,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get()
+  @Get('seed')
   async seed() {
     await this.appService.seed();
     return 'Data Seeded';

@@ -1,0 +1,4 @@
+@baseUrl = http://34.67.223.169:3000
+
+###
+GET {{baseUrl}}/seed
