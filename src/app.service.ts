@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UsersService } from './users/users.service';
+import userMock from './utils/userMock';
 
 @Injectable()
 export class AppService {
@@ -8,5 +9,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  async seed() {}
+  async seed() {
+    await this.userService.insertMany(userMock);
+  }
 }

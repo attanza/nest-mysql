@@ -31,4 +31,13 @@ export class UsersService {
   remove(id: number) {
     return `This action removes a #${id} user`;
   }
+
+  async insertMany(data: any) {
+    await this.usersRepository
+      .createQueryBuilder()
+      .insert()
+      .into(User)
+      .values(data)
+      .execute();
+  }
 }
